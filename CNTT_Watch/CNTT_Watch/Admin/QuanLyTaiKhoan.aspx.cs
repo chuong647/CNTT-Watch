@@ -13,5 +13,35 @@ namespace CNTT_Watch.Admin
         {
 
         }
+
+        protected void btnThem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnSua_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnXoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnLamTrang_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnTim_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void gwAccount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

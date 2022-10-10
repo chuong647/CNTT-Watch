@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Admin/admin.Master"AutoEventWireup="true" CodeBehind="QuanLyTaiKhoan.aspx.cs" Inherits="CNTT_Watch.Admin.QuanLyTaiKhoan" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Admin/Admin_1.Master"AutoEventWireup="true" CodeBehind="QuanLyTaiKhoan.aspx.cs" Inherits="CNTT_Watch.Admin.QuanLyTaiKhoan" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

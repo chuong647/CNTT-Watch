@@ -28,7 +28,7 @@ namespace CNTT_Watch
         public bool phanquyen(string tdn)
         {
             var q = from ac in kn.Accounts
-                    where ac.UserName == txtTenDN.Text && ac.PassWord == txtPassword.Text
+                    where ac.UserName == txtTenDN.Text && ac.Type == "Admin"
                     select ac;
             if (q.Any())
             {
@@ -57,7 +57,7 @@ namespace CNTT_Watch
                 {
                     if (phanquyen(txtTenDN.Text))
                     {
-                        Response.Redirect("QuanLyTaiKhoan.aspx");
+                        Response.Redirect("Admin/QuanLyTaiKhoan.aspx");
                     }
                     else
                     {

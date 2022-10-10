@@ -78,12 +78,12 @@
     <Content Include="TrangChu.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\admin.Master.cs">
-      <DependentUpon>admin.Master</DependentUpon>
+    <Compile Include="Admin\Admin_1.Master.cs">
+      <DependentUpon>Admin_1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\admin.Master.designer.cs">
-      <DependentUpon>admin.Master</DependentUpon>
+    <Compile Include="Admin\Admin_1.Master.designer.cs">
+      <DependentUpon>Admin_1.Master</DependentUpon>
     </Compile>
     <Compile Include="Admin\DuyetDon.aspx.cs">
       <DependentUpon>DuyetDon.aspx</DependentUpon>
@@ -135,12 +135,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin\admin.Master" />
     <Content Include="CNTTWATCH.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>CNTTWATCH.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Admin\Admin_1.Master" />
     <None Include="CNTTWATCH.dbml.layout">
       <DependentUpon>CNTTWATCH.dbml</DependentUpon>
     </None>

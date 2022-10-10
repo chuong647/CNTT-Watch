@@ -11,7 +11,7 @@ namespace CNTT_Watch.Admin
 {
 
 
-    public partial class admin
+    public partial class Admin_1
     {
 
         /// <summary>

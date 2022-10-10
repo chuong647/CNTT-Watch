@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.Master.cs" Inherits="CNTT_Watch.Admin.admin" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin_1.master.cs" Inherits="CNTT_Watch.Admin.Admin_1" %>
 
 <!DOCTYPE html>
 
