@@ -53,37 +53,30 @@
                 <asp:Button CssClass="button" ID="btnLamTrang" runat="server" Text="Làm trắng" OnClick="btnLamTrang_Click" />
                 </td>
             </tr>
-        </table>
-        <div style="margin-right:50px; width: 550px; text-align:center;">
-            <div style="padding-bottom:20px;">
-                <asp:TextBox CssClass="textbox" ID="txtTim" runat="server" placeholder="Tìm kiếm..."></asp:TextBox>
-                <asp:Button CssClass="button" ID="btnTim" runat="server" Onclick="btnTim_Click" Text="Tìm" />
+            <tr>
+                <td colspan="3">
+                    <div style="margin-right:50px; width: 550px; text-align:center;">
+            <div style="padding-bottom:20px;" align="center">
+                    <asp:TextBox CssClass="textbox" ID="txtTim" runat="server" placeholder="Tìm kiếm..."></asp:TextBox>
+                    <asp:Button CssClass="button" ID="btnTim" runat="server" Onclick="btnTim_Click" Text="Tìm" />
             </div>
             <div style="overflow:auto;">
-                <asp:GridView style="text-align:left;" 
+                <asp:GridView style="text-align:left;width:auto" 
                     ID="gwAccount" runat="server" 
                     AutoGenerateColumns="False" 
                     CellPadding="3"
                     ForeColor="#333333" 
                     Width="780px" OnSelectedIndexChanged="gwAccount_SelectedIndexChanged" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px">
                     <Columns>
-                        <asp:CommandField HeaderText="Chọn" ShowSelectButton="True" >
-                            <HeaderStyle Font-Names="quicksand" Font-Size="18px" />
-                            <ItemStyle Font-Names="quicksand" Font-Size="18px" />
-                        </asp:CommandField>
-                        <asp:BoundField DataField="ID" HeaderText="ID Tài khoản">
-                            <HeaderStyle Font-Names="quicksand" Font-Size="18px" />
-                            <ItemStyle Font-Names="quicksand" Font-Size="18px" />
-                        </asp:BoundField>
                         <asp:BoundField DataField="UserName" HeaderText="Tên đăng nhập" >
                             <HeaderStyle Font-Names="quicksand" Font-Size="18px" />
                             <ItemStyle Font-Names="quicksand" Font-Size="18px" />
                         </asp:BoundField>
-                        <asp:BoundField DataField="FirstName" HeaderText="Tên" >
+                        <asp:BoundField DataField="LastName" HeaderText="Tên" >
                             <HeaderStyle Font-Names="quicksand" Font-Size="18px" />
                             <ItemStyle Font-Names="quicksand" Font-Size="18px" />
                         </asp:BoundField>
-                        <asp:BoundField DataField="LastName" HeaderText="Họ" >
+                        <asp:BoundField DataField="FirstName" HeaderText="Họ" >
                             <HeaderStyle Font-Names="quicksand" Font-Size="18px" />
                             <ItemStyle Font-Names="quicksand" Font-Size="18px" />
                         </asp:BoundField>
@@ -91,7 +84,7 @@
                             <HeaderStyle Font-Names="quicksand" Font-Size="18px" />
                             <ItemStyle Font-Names="quicksand" Font-Size="18px" />
                         </asp:BoundField>
-                        <asp:BoundField DataField="MatKhau" HeaderText="Mật khẩu">
+                        <asp:BoundField DataField="PassWord" HeaderText="Mật khẩu">
                             <HeaderStyle Font-Names="quicksand" Font-Size="18px" />
                             <ItemStyle Font-Names="quicksand" Font-Size="18px" />
                         </asp:BoundField>
@@ -99,6 +92,10 @@
                             <HeaderStyle Font-Names="quicksand" Font-Size="18px" />
                             <ItemStyle Font-Names="quicksand" Font-Size="18px" />
                         </asp:BoundField>
+                        <asp:CommandField HeaderText="Chọn" ShowSelectButton="True" >
+                            <HeaderStyle Font-Names="quicksand" Font-Size="18px" />
+                            <ItemStyle Font-Names="quicksand" Font-Size="18px" />
+                        </asp:CommandField>
                     </Columns>
                     <EditRowStyle BackColor="#2461BF"/>
                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -111,6 +108,10 @@
                     <SortedDescendingCellStyle BackColor="#E9EBEF" />
                     <SortedDescendingHeaderStyle BackColor="#4870BE" />
                 </asp:GridView>
+                </td>
+            </tr>
+            </table>
+        
             </div>
         </div>
     </div>
