@@ -101,7 +101,7 @@
     </div>
     <div id="menu">
         <ul>
-            <li><asp:HyperLink ID="HyperLink1" NavigateUrl="~/TrangChu.aspx" CssClass="btMenu" runat="server">TRANG CHỦ</asp:HyperLink></li>
+            <li><asp:HyperLink ID="HyperLink1" NavigateUrl="~/Home.aspx" CssClass="btMenu" runat="server">TRANG CHỦ</asp:HyperLink></li>
             <li><asp:HyperLink ID="HyperLink8" NavigateUrl="~/Admin/ADDSanPham.aspx" CssClass="btMenu" runat="server">THÊM SẢN PHẨM</asp:HyperLink></li>
              <li><asp:HyperLink ID="HyperLink3" NavigateUrl="~/Admin/QuanLySanPham.aspx" CssClass="btMenu" runat="server">QUẢN LÝ SẢN PHẨM</asp:HyperLink></li>
             <li><asp:HyperLink ID="HyperLink7" NavigateUrl="~/Admin/QuanLyTaiKhoan.aspx" CssClass="btMenu" runat="server">QUẢN LÝ TÀI KHOẢN</asp:HyperLink></li>

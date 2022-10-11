@@ -71,11 +71,26 @@
     <Content Include="Admin\DuyetDon.aspx" />
     <Content Include="Admin\QuanLyTaiKhoan.aspx" />
     <Content Include="DoiMatKhau.aspx" />
+    <Content Include="Home.aspx" />
+    <Content Include="Image\casio.jpg" />
+    <Content Include="Image\Casio.png" />
+    <Content Include="Image\Citizen Nam.png" />
+    <Content Include="Image\Citizen.png" />
     <Content Include="Image\CNTT WATCH.png" />
+    <Content Include="Image\facebook.png" />
+    <Content Include="Image\footer.png" />
+    <Content Include="Image\Michael Kors.png" />
+    <Content Include="Image\op.jpg" />
+    <Content Include="Image\Orient.png" />
+    <Content Include="Image\seiko.jpg" />
+    <Content Include="Image\Senkio.png" />
+    <Content Include="Image\Thongtinshop.jpg" />
+    <Content Include="Image\Tissot nu.png" />
+    <Content Include="Image\youtube.png" />
     <Content Include="Login.aspx" />
     <Content Include="Style\styleTT.css" />
+    <Content Include="ThongTinShop.aspx" />
     <Content Include="Web.config" />
-    <Content Include="TrangChu.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\Admin_1.Master.cs">
@@ -111,6 +126,13 @@
     <Compile Include="DoiMatKhau.aspx.designer.cs">
       <DependentUpon>DoiMatKhau.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -119,12 +141,12 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TrangChu.aspx.cs">
-      <DependentUpon>TrangChu.aspx</DependentUpon>
+    <Compile Include="ThongTinShop.aspx.cs">
+      <DependentUpon>ThongTinShop.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TrangChu.aspx.designer.cs">
-      <DependentUpon>TrangChu.aspx</DependentUpon>
+    <Compile Include="ThongTinShop.aspx.designer.cs">
+      <DependentUpon>ThongTinShop.aspx</DependentUpon>
     </Compile>
     <Compile Include="User.Master.cs">
       <DependentUpon>User.Master</DependentUpon>
