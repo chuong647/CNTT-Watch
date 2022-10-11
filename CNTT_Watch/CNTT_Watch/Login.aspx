@@ -13,7 +13,7 @@
     background: #00ffff;
 }
 .box{
-    width: 285px;
+    width: 300px;
     padding: 40px;
     position: absolute;
     top: 49%;
@@ -23,7 +23,7 @@
     text-align: center;
     /*color: white;*/
     box-shadow: 5px 7px 20px rgb(140, 140, 140);
-    height: 390px;
+    height: 450px;
     border-radius: 10px;
 }
 .text{
@@ -54,7 +54,7 @@
     background: none;
     display: block;
     margin: 20px auto;
-    text-align: center;
+    /*text-align: center;*/
     border: 2px solid #2ecc71;
     padding: 14px;
     outline: none;
