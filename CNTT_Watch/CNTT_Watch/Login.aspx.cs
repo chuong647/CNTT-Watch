@@ -61,7 +61,7 @@ namespace CNTT_Watch
                     }
                     else
                     {
-                        Response.Redirect("TrangChu.aspx");
+                        Response.Redirect("Home.aspx");
                     }
                 }
             }
