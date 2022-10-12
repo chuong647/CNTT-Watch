@@ -57,7 +57,7 @@
             <tr>
                 <td colspan="2">
                     <div style="padding-bottom:20px; width: 816px;" align="center">
-                    <asp:TextBox CssClass="textbox" ID="txtTim" runat="server" placeholder="Tìm kiếm..."></asp:TextBox>
+                    <asp:TextBox CssClass="textbox" ID="txtTim" runat="server" placeholder="Tìm kiếm..." TextMode="Search"></asp:TextBox>
                     <asp:Button CssClass="button" ID="btnTim" runat="server" Onclick="btnTim_Click" Text="Tìm" />
                 </div>
                 <div style="overflow:auto;">
