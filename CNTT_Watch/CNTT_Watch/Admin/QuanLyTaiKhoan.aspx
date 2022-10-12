@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="Style/styleTT.css"/>
     <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <p class="header-text"><b>Quản Lý Tài Khoản</b></p>
+    
     <div style="display: flex; justify-content: center; padding-bottom: 20px; margin-left:50px">
         <table style="width:550px;">
             <tr>
-                <td><b>ID Tài khoản:</b></td>
-                <td><asp:TextBox Enabled="false" CssClass="textbox" ID="txtIDTK" runat="server"></asp:TextBox></td>
+                <td colspan="2" align="center">
+                    <p class="header-text" style="font-size: 30px"><b>Quản Lý Tài Khoản</b></p>
+                </td>
             </tr>
             <tr>
                 <td><b>Tên đăng nhập:</b></td>
@@ -54,65 +55,61 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="3">
-                    <div style="margin-right:50px; width: 550px; text-align:center;">
-            <div style="padding-bottom:20px;" align="center">
+                <td colspan="2">
+                    <div style="padding-bottom:20px; width: 816px;" align="center">
                     <asp:TextBox CssClass="textbox" ID="txtTim" runat="server" placeholder="Tìm kiếm..."></asp:TextBox>
                     <asp:Button CssClass="button" ID="btnTim" runat="server" Onclick="btnTim_Click" Text="Tìm" />
-            </div>
-            <div style="overflow:auto;">
-                <asp:GridView style="text-align:left;width:auto" 
-                    ID="gwAccount" runat="server" 
-                    AutoGenerateColumns="False" 
-                    CellPadding="3"
-                    ForeColor="#333333" 
-                    Width="780px" OnSelectedIndexChanged="gwAccount_SelectedIndexChanged" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px">
-                    <Columns>
-                        <asp:BoundField DataField="UserName" HeaderText="Tên đăng nhập" >
-                            <HeaderStyle Font-Names="quicksand" Font-Size="18px" />
-                            <ItemStyle Font-Names="quicksand" Font-Size="18px" />
-                        </asp:BoundField>
-                        <asp:BoundField DataField="LastName" HeaderText="Tên" >
-                            <HeaderStyle Font-Names="quicksand" Font-Size="18px" />
-                            <ItemStyle Font-Names="quicksand" Font-Size="18px" />
-                        </asp:BoundField>
-                        <asp:BoundField DataField="FirstName" HeaderText="Họ" >
-                            <HeaderStyle Font-Names="quicksand" Font-Size="18px" />
-                            <ItemStyle Font-Names="quicksand" Font-Size="18px" />
-                        </asp:BoundField>
-                        <asp:BoundField DataField="Email" HeaderText="Địa chỉ Email" >
-                            <HeaderStyle Font-Names="quicksand" Font-Size="18px" />
-                            <ItemStyle Font-Names="quicksand" Font-Size="18px" />
-                        </asp:BoundField>
-                        <asp:BoundField DataField="PassWord" HeaderText="Mật khẩu">
-                            <HeaderStyle Font-Names="quicksand" Font-Size="18px" />
-                            <ItemStyle Font-Names="quicksand" Font-Size="18px" />
-                        </asp:BoundField>
-                        <asp:BoundField DataField="Type" HeaderText="Trạng thái" >
-                            <HeaderStyle Font-Names="quicksand" Font-Size="18px" />
-                            <ItemStyle Font-Names="quicksand" Font-Size="18px" />
-                        </asp:BoundField>
-                        <asp:CommandField HeaderText="Chọn" ShowSelectButton="True" >
-                            <HeaderStyle Font-Names="quicksand" Font-Size="18px" />
-                            <ItemStyle Font-Names="quicksand" Font-Size="18px" />
-                        </asp:CommandField>
-                    </Columns>
-                    <EditRowStyle BackColor="#2461BF"/>
-                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" Wrap="False" HorizontalAlign="Center" />
-                    <PagerStyle BackColor="#2461BF" ForeColor="#000066" HorizontalAlign="Left" Wrap="False" />
-                    <RowStyle BackColor="#EFF3FB" Wrap="False" ForeColor="#000066" />
-                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                </asp:GridView>
+                </div>
+                <div style="overflow:auto;">
+                    <asp:GridView style="text-align:left;" 
+                        ID="gwAccount" runat="server" 
+                        AutoGenerateColumns="False" 
+                        CellPadding="3"
+                        ForeColor="#333333" 
+                        Width="780px" OnSelectedIndexChanged="gwAccount_SelectedIndexChanged" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px">
+                        <Columns>
+                            <asp:BoundField DataField="UserName" HeaderText="Tên đăng nhập" >
+                                <HeaderStyle Font-Names="quicksand" Font-Size="18px" />
+                                <ItemStyle Font-Names="quicksand" Font-Size="18px" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="LastName" HeaderText="Tên" >
+                                <HeaderStyle Font-Names="quicksand" Font-Size="18px" />
+                                <ItemStyle Font-Names="quicksand" Font-Size="18px" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="FirstName" HeaderText="Họ" >
+                                <HeaderStyle Font-Names="quicksand" Font-Size="18px" />
+                                <ItemStyle Font-Names="quicksand" Font-Size="18px" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="Email" HeaderText="Địa chỉ Email" >
+                                <HeaderStyle Font-Names="quicksand" Font-Size="18px" />
+                                <ItemStyle Font-Names="quicksand" Font-Size="18px" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="PassWord" HeaderText="Mật khẩu">
+                                <HeaderStyle Font-Names="quicksand" Font-Size="18px" />
+                                <ItemStyle Font-Names="quicksand" Font-Size="18px" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="Type" HeaderText="Trạng thái" >
+                                <HeaderStyle Font-Names="quicksand" Font-Size="18px" />
+                                <ItemStyle Font-Names="quicksand" Font-Size="18px" />
+                            </asp:BoundField>
+                            <asp:CommandField HeaderText="Chọn" ShowSelectButton="True" >
+                                <HeaderStyle Font-Names="quicksand" Font-Size="18px" />
+                                <ItemStyle Font-Names="quicksand" Font-Size="18px" />
+                            </asp:CommandField>
+                        </Columns>
+                        <EditRowStyle BackColor="#2461BF"/>
+                        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" Wrap="False" HorizontalAlign="Center" />
+                        <PagerStyle BackColor="#2461BF" ForeColor="#000066" HorizontalAlign="Left" Wrap="False" />
+                        <RowStyle BackColor="#EFF3FB" Wrap="False" ForeColor="#000066" />
+                        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                        <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                        <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                        <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                    </asp:GridView>
+                    </div>
                 </td>
             </tr>
-            </table>
-        
-            </div>
-        </div>
-    </div>
+        </table>
 </asp:Content>

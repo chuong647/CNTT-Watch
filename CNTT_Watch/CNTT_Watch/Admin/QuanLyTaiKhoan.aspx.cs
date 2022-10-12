@@ -25,7 +25,7 @@ namespace CNTT_Watch.Admin
             gwAccount.DataSource = q;
             gwAccount.DataBind();
         }
-        public bool kiemtra(string us)
+        public bool Check(string us)
         {
             var q = from ac in kn.Accounts
                     where ac.UserName == us
@@ -41,51 +41,88 @@ namespace CNTT_Watch.Admin
         }
         protected void btnThem_Click(object sender, EventArgs e)
         {
-            if(kiemtra(txtUsername.Text))
+            if(Check(txtUsername.Text))
             {
-                showMessage("Tên đăng nhập đã tồn tại");
+                showMessage("Tên đăng nhập " + txtUsername.Text + " đã tồn tại");
+                ClearData();
             }
             else
             {
-                    Account ac = new Account();
-                    ac.UserName = txtUsername.Text;
-                    ac.LastName = txtTen.Text;
-                    ac.FirstName = txtHo.Text;
-                    ac.Email = txtEmail.Text;
-                    ac.PassWord = txtPassword.Text;
-                    bool tt = Boolean.Parse(rdbChucVu.SelectedValue);
-                    if (tt == true)
-                    {
-                        ac.Type = "Admin";
-                    }
-                    else
-                    {
-                        ac.Type = "User";
-                    }
-                    kn.Accounts.InsertOnSubmit(ac);
-                    kn.SubmitChanges();
-                    load_gwAccount();
-                    showMessage("Đã tạo thành công tài khoản: " + txtUsername.Text);
+                Account ac = new Account();
+                ac.UserName = txtUsername.Text;
+                ac.LastName = txtTen.Text;
+                ac.FirstName = txtHo.Text;
+                ac.Email = txtEmail.Text;
+                ac.PassWord = txtPassword.Text;
+                bool tt = Boolean.Parse(rdbChucVu.SelectedValue);
+                if (tt == true)
+                {
+                    ac.Type = "Admin";
+                }
+                else
+                {
+                    ac.Type = "User";
+                }
+                kn.Accounts.InsertOnSubmit(ac);
+                kn.SubmitChanges();
+                load_gwAccount();
+                showMessage("Đã tạo thành công tài khoản: " + txtUsername.Text);
+                ClearData();
             }
         }
 
         protected void btnSua_Click(object sender, EventArgs e)
         {
-
+            var q = from ac in kn.Accounts
+                    where ac.UserName == txtUsername.Text
+                    select ac;
+            foreach (var ac in q)
+            {
+                ac.FirstName = txtHo.Text;
+                ac.LastName = txtTen.Text;
+                ac.Email = txtEmail.Text;
+                bool tt = Boolean.Parse(rdbChucVu.SelectedValue);
+                if (tt == true)
+                {
+                    ac.Type = "Admin";
+                }
+                else
+                {
+                    ac.Type = "User";
+                }
+                kn.SubmitChanges();
+                load_gwAccount();
+                showMessage("Đã cập nhật thông tin tài khoản: " + txtUsername.Text + " thành công");
+                ClearData();
+            }
         }
 
         protected void btnXoa_Click(object sender, EventArgs e)
         {
-
+            var q = from ac in kn.Accounts
+                    where ac.UserName == txtUsername.Text
+                    select ac;
+            foreach (var ac in q)
+            {
+                kn.Accounts.DeleteOnSubmit(ac);
+            }
+            kn.SubmitChanges();
+            load_gwAccount();
+            Page.DataBind();
+            showMessage("Đã xóa tài khoản: " + txtUsername.Text);
+            ClearData();
         }
 
         protected void btnLamTrang_Click(object sender, EventArgs e)
         {
-            txtIDTK.Text = "";
+            ClearData();
+        }
+        public void ClearData()
+        {
             txtHo.Text = "";
             txtTen.Text = "";
             txtEmail.Text = "";
-            txtPassword.Text = "";
+            txtPassword.Text = "nguoidungmoi";
             txtTim.Text = "";
             txtUsername.Text = "";
             rdbChucVu.ClearSelection();
@@ -127,7 +164,7 @@ namespace CNTT_Watch.Admin
             }
             catch (Exception)
             {
-
+               
             }
         }
         public void showMessage(string mess)
