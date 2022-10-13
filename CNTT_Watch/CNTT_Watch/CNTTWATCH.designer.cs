@@ -42,9 +42,24 @@ namespace CNTT_Watch
     partial void InsertProduct(Product instance);
     partial void UpdateProduct(Product instance);
     partial void DeleteProduct(Product instance);
-    #endregion
-		
-		public CNTTWATCHDataContext() : 
+
+        internal object showOrder()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal object showHotSale()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal object showWatch(int v1, int v2, bool v3)
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
+
+        public CNTTWATCHDataContext() : 
 				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["CNTT_WatchConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();

@@ -68,10 +68,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin\DuyetDon.aspx" />
+    <Content Include="Admin\DuyeDon.aspx" />
+    <Content Include="Admin\QuanLySanPham.aspx" />
     <Content Include="Admin\QuanLyTaiKhoan.aspx" />
+    <Content Include="Admin\TrangChu.aspx" />
+    <Content Include="Image\sale.png" />
+    <Content Include="TrangChu.aspx" />
     <Content Include="DoiMatKhau.aspx" />
-    <Content Include="Home.aspx" />
     <Content Include="Image\casio.jpg" />
     <Content Include="Image\Casio.png" />
     <Content Include="Image\Citizen Nam.png" />
@@ -91,6 +94,7 @@
     <Content Include="Register.aspx" />
     <Content Include="Style\styleTT.css" />
     <Content Include="ThongTinShop.aspx" />
+    <Content Include="veshop.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -101,12 +105,19 @@
     <Compile Include="Admin\Admin_1.Master.designer.cs">
       <DependentUpon>Admin_1.Master</DependentUpon>
     </Compile>
-    <Compile Include="Admin\DuyetDon.aspx.cs">
-      <DependentUpon>DuyetDon.aspx</DependentUpon>
+    <Compile Include="Admin\DuyeDon.aspx.cs">
+      <DependentUpon>DuyeDon.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\DuyetDon.aspx.designer.cs">
-      <DependentUpon>DuyetDon.aspx</DependentUpon>
+    <Compile Include="Admin\DuyeDon.aspx.designer.cs">
+      <DependentUpon>DuyeDon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\QuanLySanPham.aspx.cs">
+      <DependentUpon>QuanLySanPham.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\QuanLySanPham.aspx.designer.cs">
+      <DependentUpon>QuanLySanPham.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\QuanLyTaiKhoan.aspx.cs">
       <DependentUpon>QuanLyTaiKhoan.aspx</DependentUpon>
@@ -115,10 +126,24 @@
     <Compile Include="Admin\QuanLyTaiKhoan.aspx.designer.cs">
       <DependentUpon>QuanLyTaiKhoan.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\TrangChu.aspx.cs">
+      <DependentUpon>TrangChu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TrangChu.aspx.designer.cs">
+      <DependentUpon>TrangChu.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CNTTWATCH.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CNTTWATCH.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="TrangChu.aspx.cs">
+      <DependentUpon>TrangChu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrangChu.aspx.designer.cs">
+      <DependentUpon>TrangChu.aspx</DependentUpon>
     </Compile>
     <Compile Include="DoiMatKhau.aspx.cs">
       <DependentUpon>DoiMatKhau.aspx</DependentUpon>
@@ -126,13 +151,6 @@
     </Compile>
     <Compile Include="DoiMatKhau.aspx.designer.cs">
       <DependentUpon>DoiMatKhau.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Home.aspx.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Home.aspx.designer.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -162,6 +180,13 @@
     </Compile>
     <Compile Include="User.Master.designer.cs">
       <DependentUpon>User.Master</DependentUpon>
+    </Compile>
+    <Compile Include="veshop.aspx.cs">
+      <DependentUpon>veshop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="veshop.aspx.designer.cs">
+      <DependentUpon>veshop.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

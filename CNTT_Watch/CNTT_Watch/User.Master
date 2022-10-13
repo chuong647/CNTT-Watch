@@ -2,101 +2,113 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-    <style>
-
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        header2{
+            background: #ff6a00;
+        }
         .sticky {
             position: fixed;
             top: 0;
             width: 100%;
         }
-        #menu{
-            z-index:10;
-            background-color:white;
-            height:44px;
-            line-height:44px;
-            width:100%;
+
+        #menu {
+            z-index: 10;
+            background-color: white;
+            height: 44px;
+            line-height: 44px;
+            width: 100%;
             display: flex;
             justify-content: center;
-            border-bottom:thin solid;
-        }
-        #menu ul{
-			list-style-type:none;
-		}
-		#menu ul li{
-			display:inline-block;
-            position:relative;
-			height:44px;
-			line-height:44px;
-			text-align:center;
-            font-family:"Roboto",sans-serif;
-            font-weight:bold;
-            margin:0px 10px;
-		}
-        #menu ul li:hover .btMenu{
-			color:red;
-		}
-        .btMenu{
-			text-decoration:none;
-            color:black;
-        }
-        .menu2{
-            z-index:10;
-            background-color:white;
-            display:none;
-            position:absolute;
-            width:200px;
-            text-align:left;
-        }
-        .menu2 a{
-            text-decoration:none;
-        }
-        #menu ul li:hover .menu2{
-            display:block;
+            border-bottom: thin solid;
         }
 
-        #footer1{
-            background-color:#5b5b5b;
-            color:white;
-            height:48px;
-            line-height:48px;
-            width:100%;
+            #menu ul {
+                list-style-type: none;
+            }
+
+                #menu ul li {
+                    display: inline-block;
+                    position: relative;
+                    height: 44px;
+                    line-height: 44px;
+                    text-align: center;
+                    font-family: "Roboto",sans-serif;
+                    font-weight: bold;
+                    margin: 0px 10px;
+                }
+
+                    #menu ul li:hover .btMenu {
+                        color: red;
+                    }
+
+        .btMenu {
+            text-decoration: none;
+            color: black;
+        }
+
+        .menu2 {
+            z-index: 10;
+            background-color: white;
+            display: none;
+            position: absolute;
+            width: 200px;
+            text-align: left;
+        }
+
+            .menu2 a {
+                text-decoration: none;
+            }
+
+        #menu ul li:hover .menu2 {
+            display: block;
+        }
+
+        #footer1 {
+            background-color: #5b5b5b;
+            color: white;
+            height: 48px;
+            line-height: 48px;
+            width: 100%;
             display: flex;
             justify-content: center;
-            margin-top:auto;
+            margin-top: auto;
         }
-        #footer2{
-            width:100%;
+
+        #footer2 {
+            width: 100%;
             display: flex;
             justify-content: center;
         }
-        #footer2 td{
-            width:33%;
-            vertical-align:top;
-            line-height:30px;
-            padding-right:10px;
-        }
-        #footer2 span{
-            font-weight:bold;
-        }
-        #footer2 a{
-            color:red;
-            text-decoration:none;
-        }
+
+            #footer2 td {
+                width: 33%;
+                vertical-align: top;
+                line-height: 30px;
+                padding-right: 10px;
+            }
+
+            #footer2 span {
+                font-weight: bold;
+            }
+
+            #footer2 a {
+                color: red;
+                text-decoration: none;
+            }
     </style>
 </head>
 <body>
-    <div id="header1">
-        <div style="width:80%;">
-            CNTT WATCH - Đồng hồ chính hãng uy tín
-        </div>
-    </div>
     <div id="header2">
-        <div style="width:80%;">
+        <div style="width:100%;">
             <table cellpadding="0" cellspacing="0" style="height:103px;">
                 <tr style="text-align:center;">
                     <td style="width:22%;">
-                        <a href="Home.aspx"><img width="235" height="103" src="../Image/CNTT WATCH.png" alt="CNTT WATCH – Đồng hồ chính hãng"/></a>
+                        <a href="TrangChu.aspx"><img width="150" src="../Image/CNTT WATCH.png" alt="CNTT WATCH – Đồng hồ chính hãng" style="height: 150px"/></a>
                     </td>
                     <td style="width:22%;">
                         <span>ĐỊA CHỈ</span>
@@ -118,8 +130,8 @@
     </div>
     <div id="menu">
         <ul>
-            <li><asp:HyperLink ID="HyperLink1" NavigateUrl="~/Home.aspx" CssClass="btMenu" runat="server">TRANG CHỦ</asp:HyperLink></li>
-        	<li><asp:HyperLink ID="HyperLink2" NavigateUrl="~/veshopwatch.aspx" CssClass="btMenu" runat="server">VỀ SHOP</asp:HyperLink></li>
+            <li><asp:HyperLink ID="HyperLink1" NavigateUrl="~/TrangChu.aspx" CssClass="btMenu" runat="server">TRANG CHỦ</asp:HyperLink></li>
+        	<li><asp:HyperLink ID="HyperLink2" NavigateUrl="~/veshop.aspx" CssClass="btMenu" runat="server">VỀ SHOP</asp:HyperLink></li>
             <li>
                 <asp:HyperLink ID="HyperLink3" NavigateUrl="#" CssClass="btMenu" runat="server">THƯƠNG HIỆU</asp:HyperLink>
                 <ul class="menu2">
@@ -140,7 +152,15 @@
                     <li><a href="DayDongHo.aspx">DÂY ĐỒNG HỒ</a></li>
                 </ul>
             </li>
-            <li><asp:HyperLink ID="HyperLink7" NavigateUrl="~/lienhe.aspx" CssClass="btMenu" runat="server">LIÊN HỆ</asp:HyperLink></li>
+            <li><asp:HyperLink ID="HyperLink7" NavigateUrl="~/lienhe.aspx" CssClass="btMenu" runat="server">LIÊN HỆ</asp:HyperLink>
+            </li>
+            <li>
+                <asp:HyperLink ID="HyperLink10" NavigateUrl="#" CssClass="btMenu" runat="server">TÀI KHOẢN</asp:HyperLink>
+                <ul class="menu2">
+                    <li><a href="ThongTinTK.aspx">Thông tin cá nhân</a></li>
+                    <li><a href="DangXuat.aspx">Đăng xuẩ</a></li>
+                </ul>
+            </li>
 
         </ul>
     </div>
@@ -165,7 +185,7 @@
                     </td>
                     <td>
                         <span>THÔNG TIN LIÊN HỆ</span>
-                        <br />Showroom: Số 477 Thanh Niên - Phù Mỹ - Bình Đinh.
+                        <br />Showroom: Số 477 Thanh Niên - Phù Mỹ - Bình Định.
                         <br />Hotline: 036.369.8294
                         <br />Email : hotro.cnttwatchtin@gmail.com
                         <br />Giờ mở cửa: 9h00- 19h30
@@ -173,10 +193,10 @@
                     </td>
                     <td>
                         <span>CHÍNH SÁCH DỊCH VỤ</span>
-                        <br /><a href="veshopwatch.aspx">Giới thiệu ShopWatch</a>
-                        <br /><a href="veshopwatch.aspx">Chính sách bảo mật</a>
-                        <br /><a href="veshopwatch.aspx">Điều khoản dịch vụ</a>
-                        <br /><a href="veshopwatch.aspx">Chính sách bảo hành</a>
+                        <br /><a href="veshop.aspx">Giới thiệu CNTT Watch</a>
+                        <br /><a href="veshop.aspx">Chính sách bảo mật</a>
+                        <br /><a href="veshop.aspx">Điều khoản dịch vụ</a>
+                        <br /><a href="veshop.aspx">Chính sách bảo hành</a>
                         <br /><a href="lienhe.aspx">Liên hệ tư vấn</a>
                     </td>
                 </tr>
@@ -185,7 +205,7 @@
     </div>
     <div id="footer1">
         <div style="width:80%;">
-            Bản quyền thuộc về 2020 © ShopWatch
+            Bản quyền thuộc về 2022 © CNTT Watch
         </div>
     </div>
 

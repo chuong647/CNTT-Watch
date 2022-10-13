@@ -16,14 +16,7 @@ namespace CNTT_Watch
             var q = from ac in kn.Accounts
                     where ac.UserName == txtTenDN.Text && ac.PassWord == txtPassword.Text
                     select new { ac.UserName, ac.PassWord };
-            if(q.Any())
-            {
-                return true;
-            }    
-            else
-            {
-                return false;
-            }
+            return q.Any();
         }
         public bool phanquyen(string tdn)
         {
@@ -61,7 +54,7 @@ namespace CNTT_Watch
                     }
                     else
                     {
-                        Response.Redirect("Home.aspx");
+                        Response.Redirect("TrangChu.aspx");
                     }
                 }
             }
@@ -73,6 +66,11 @@ namespace CNTT_Watch
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnDangKy_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Register.aspx");
         }
     }
 }

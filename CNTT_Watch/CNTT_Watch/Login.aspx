@@ -14,9 +14,9 @@
 }
 .box{
     width: 300px;
-    padding: 40px;
+    padding: 30px;
     position: absolute;
-    top: 49%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     background:White;
@@ -54,15 +54,11 @@
     background: none;
     display: block;
     margin: 20px auto;
-    /*text-align: center;*/
-    border: 2px solid #2ecc71;
-    padding: 14px;
+    border: 2px solid #2ECC71;
+    padding: 10px;
     outline: none;
-    /*color: white;*/
     border-radius: 8px;
     transition: 0.25s;
-    /*cursor: pointer;*/
-    width: 150px;
     font-size: 15px;
 }
 .btn:hover{
@@ -72,7 +68,7 @@
     /*color: #ffffff;*/
 }
 .logosize{
-    padding-top:  8px;
+    padding-top:  2px;
     height: 100px;
     width: 148px;
             margin-top: 0px;
@@ -82,11 +78,11 @@
 <body>
     <form id="form1" runat="server">
         <div class="box">
-            <img class="logosize" src="Image/CNTT WATCH.png" alt="" />
-            <h1 class="header">Đăng nhập</h1>
+            &nbsp;<img class="logosize" src="Image/CNTT WATCH.png" alt="" /><h1 class="header">Đăng Nhập</h1>
             <asp:TextBox class="text" ID="txtTenDN" placeholder="Tên đăng nhập" runat="server" required=""></asp:TextBox>
             <asp:TextBox class="text" ID="txtPassword" TextMode="Password" placeholder="Mật khẩu" runat="server" required=""></asp:TextBox>
             <asp:Button class="btn" ID="btnDangNhap" runat="server" Text="Đăng nhập" OnClick="btnDangNhap_Click"/>
+            <asp:LinkButton class="btn" ID="btnDangKy" runat="server" Text="Đăng ký ngay!" OnClick="btnDangKy_Click" Width="160px" />
         </div>
     </form>
 </body>

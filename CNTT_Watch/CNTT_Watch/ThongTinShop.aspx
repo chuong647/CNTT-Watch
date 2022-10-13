@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User.Master" AutoEventWireup="true" CodeBehind="ThongTinShop.aspx.cs" Inherits="CNTT_Watch.ThongTinShop" %>
-
-                <br />
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">            
+<br />
                  <p style="font-weight:bold; font-size:22px">Chính sách bán hàng và bảo hành tại ShopWatch</p> <br />
                 <br />Với những quan điểm khắc khe trong kinh doanh, chính vì vậy mà chính sách bán hàng cũng như bảo hành của ShopWatch cũng có những quy định riêng.
                 <br />
@@ -23,7 +23,7 @@
                         <br /> <br />
                     <img src="/Image/Thongtinshop.jpg"/><br />
                     <p style="font-weight:bold; font-size:22px">ShopWatch – Địa chỉ bán đồng hồ chính hãng tin cậy</p> <br />
-                    Hiện nay, ShopWatch chỉ có duy nhất một show-room tại địa chỉ: 477 Thanh Niên – Phù Mỹ - Bình Định. Mọi thông tin địa chỉ khác đều là cửa hàng giả mạo. Chính vì thế, để đảm bảo quyền lợi của chính mình, quý khách hàng nên đến trực tiếp show-room của Cntt Watch và chỉ nên đặt hàng online thông website: <p style="font-weight:bold> cnttwatch.vn</p> hoặc hotline <p style="font-weight:bold> 036.369.8294 </p>
+                    Hiện nay, ShopWatch chỉ có duy nhất một show-room tại địa chỉ: 477 Thanh Niên – Phù Mỹ - Bình Định. Mọi thông tin địa chỉ khác đều là cửa hàng giả mạo. Chính vì thế, để đảm bảo quyền lợi của chính mình, quý khách hàng nên đến trực tiếp show-room của Cntt Watch và chỉ nên đặt hàng online hoặc có thể gọi tới h</p>
                 <br /> 
                  <br />
                 Với mục tiêu trở thành nhà bán lẻ đồng hồ chính hãng hàng đầu Việt Nam, Cntt Watch đã, đang và sẽ xây dựng thêm nhiều hệ thống show-room trên toàn quốc để có thể mang tới khách hàng đồng hồ thật, giá trị thật.<br />

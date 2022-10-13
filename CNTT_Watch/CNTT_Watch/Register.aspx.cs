@@ -36,16 +36,6 @@ namespace CNTT_Watch
                 return true;
 
             }
-            if (txtFirstname.Text.Equals(""))
-            {
-                showMessage("Chưa nhập FirstName");
-                return true;
-            }
-            if (txtLastname.Text.Equals(""))
-            {
-                showMessage("Chưa nhập LastName");
-                return true;
-            }
             if (txtEmail.Text.Equals(""))
             {
                 showMessage("Chưa nhập Email");
@@ -84,8 +74,6 @@ namespace CNTT_Watch
                 {
                     Account ac = new Account();
                     ac.UserName = txtUsername.Text;
-                    ac.LastName = txtFirstname.Text;
-                    ac.FirstName = txtFirstname.Text;
                     ac.Email = txtEmail.Text;
                     ac.Type = "User";
                     if (txtPassword1.Text.Equals(txtPassword2.Text))
@@ -105,7 +93,7 @@ namespace CNTT_Watch
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Login.aspx");
+            Response.Redirect("Login.aspx");    
         }
     }
 }
