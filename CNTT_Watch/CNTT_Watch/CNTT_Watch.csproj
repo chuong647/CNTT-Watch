@@ -93,7 +93,6 @@
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Style\styleTT.css" />
-    <Content Include="ThongTinShop.aspx" />
     <Content Include="veshop.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -166,13 +165,6 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ThongTinShop.aspx.cs">
-      <DependentUpon>ThongTinShop.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ThongTinShop.aspx.designer.cs">
-      <DependentUpon>ThongTinShop.aspx</DependentUpon>
     </Compile>
     <Compile Include="User.Master.cs">
       <DependentUpon>User.Master</DependentUpon>
