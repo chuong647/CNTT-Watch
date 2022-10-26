@@ -68,7 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin\DuyeDon.aspx" />
+    <Content Include="Admin\DuyetDon.aspx" />
     <Content Include="Admin\QuanLySanPham.aspx" />
     <Content Include="Admin\QuanLyTaiKhoan.aspx" />
     <Content Include="Admin\ThemSanPham.aspx" />
@@ -105,12 +105,12 @@
     <Compile Include="Admin\AdminMT.Master.designer.cs">
       <DependentUpon>AdminMT.Master</DependentUpon>
     </Compile>
-    <Compile Include="Admin\DuyeDon.aspx.cs">
-      <DependentUpon>DuyeDon.aspx</DependentUpon>
+    <Compile Include="Admin\DuyetDon.aspx.cs">
+      <DependentUpon>DuyetDon.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\DuyeDon.aspx.designer.cs">
-      <DependentUpon>DuyeDon.aspx</DependentUpon>
+    <Compile Include="Admin\DuyetDon.aspx.designer.cs">
+      <DependentUpon>DuyetDon.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\QuanLySanPham.aspx.cs">
       <DependentUpon>QuanLySanPham.aspx</DependentUpon>
