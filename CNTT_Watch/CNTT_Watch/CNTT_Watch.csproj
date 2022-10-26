@@ -71,6 +71,7 @@
     <Content Include="Admin\DuyeDon.aspx" />
     <Content Include="Admin\QuanLySanPham.aspx" />
     <Content Include="Admin\QuanLyTaiKhoan.aspx" />
+    <Content Include="Admin\ThemSanPham.aspx" />
     <Content Include="Admin\TrangChu.aspx" />
     <Content Include="Image\sale.png" />
     <Content Include="TrangChu.aspx" />
@@ -97,12 +98,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\Admin_1.Master.cs">
-      <DependentUpon>Admin_1.Master</DependentUpon>
+    <Compile Include="Admin\AdminMT.Master.cs">
+      <DependentUpon>AdminMT.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Admin_1.Master.designer.cs">
-      <DependentUpon>Admin_1.Master</DependentUpon>
+    <Compile Include="Admin\AdminMT.Master.designer.cs">
+      <DependentUpon>AdminMT.Master</DependentUpon>
     </Compile>
     <Compile Include="Admin\DuyeDon.aspx.cs">
       <DependentUpon>DuyeDon.aspx</DependentUpon>
@@ -124,6 +125,13 @@
     </Compile>
     <Compile Include="Admin\QuanLyTaiKhoan.aspx.designer.cs">
       <DependentUpon>QuanLyTaiKhoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ThemSanPham.aspx.cs">
+      <DependentUpon>ThemSanPham.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ThemSanPham.aspx.designer.cs">
+      <DependentUpon>ThemSanPham.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\TrangChu.aspx.cs">
       <DependentUpon>TrangChu.aspx</DependentUpon>
@@ -187,7 +195,7 @@
       <LastGenOutput>CNTTWATCH.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Admin\Admin_1.Master" />
+    <Content Include="Admin\AdminMT.Master" />
     <None Include="CNTTWATCH.dbml.layout">
       <DependentUpon>CNTTWATCH.dbml</DependentUpon>
     </None>
@@ -202,6 +210,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Image\Watch\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -22,7 +22,7 @@ namespace CNTT_Watch
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="CNTT_Watch")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="CNTTWatch")]
 	public partial class CNTTWATCHDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -39,28 +39,13 @@ namespace CNTT_Watch
     partial void InsertOrder(Order instance);
     partial void UpdateOrder(Order instance);
     partial void DeleteOrder(Order instance);
-    partial void InsertProduct(Product instance);
-    partial void UpdateProduct(Product instance);
-    partial void DeleteProduct(Product instance);
-
-        internal object showOrder()
-        {
-            throw new NotImplementedException();
-        }
-
-        internal object showHotSale()
-        {
-            throw new NotImplementedException();
-        }
-
-        internal object showWatch(int v1, int v2, bool v3)
-        {
-            throw new NotImplementedException();
-        }
-        #endregion
-
-        public CNTTWATCHDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["CNTT_WatchConnectionString"].ConnectionString, mappingSource)
+    partial void InsertWatch(Watch instance);
+    partial void UpdateWatch(Watch instance);
+    partial void DeleteWatch(Watch instance);
+    #endregion
+		
+		public CNTTWATCHDataContext() : 
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["CNTTWatchConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -121,11 +106,11 @@ namespace CNTT_Watch
 			}
 		}
 		
-		public System.Data.Linq.Table<Product> Products
+		public System.Data.Linq.Table<Watch> Watches
 		{
 			get
 			{
-				return this.GetTable<Product>();
+				return this.GetTable<Watch>();
 			}
 		}
 	}
@@ -322,9 +307,9 @@ namespace CNTT_Watch
 		
 		private string _NameCategory;
 		
-		private string _Country;
+		private string _QuocGia;
 		
-		private EntitySet<Product> _Products;
+		private EntitySet<Watch> _Watches;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -334,13 +319,13 @@ namespace CNTT_Watch
     partial void OnIDChanged();
     partial void OnNameCategoryChanging(string value);
     partial void OnNameCategoryChanged();
-    partial void OnCountryChanging(string value);
-    partial void OnCountryChanged();
+    partial void OnQuocGiaChanging(string value);
+    partial void OnQuocGiaChanged();
     #endregion
 		
 		public Category()
 		{
-			this._Products = new EntitySet<Product>(new Action<Product>(this.attach_Products), new Action<Product>(this.detach_Products));
+			this._Watches = new EntitySet<Watch>(new Action<Watch>(this.attach_Watches), new Action<Watch>(this.detach_Watches));
 			OnCreated();
 		}
 		
@@ -384,36 +369,36 @@ namespace CNTT_Watch
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Country", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Country
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QuocGia", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string QuocGia
 		{
 			get
 			{
-				return this._Country;
+				return this._QuocGia;
 			}
 			set
 			{
-				if ((this._Country != value))
+				if ((this._QuocGia != value))
 				{
-					this.OnCountryChanging(value);
+					this.OnQuocGiaChanging(value);
 					this.SendPropertyChanging();
-					this._Country = value;
-					this.SendPropertyChanged("Country");
-					this.OnCountryChanged();
+					this._QuocGia = value;
+					this.SendPropertyChanged("QuocGia");
+					this.OnQuocGiaChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Category_Product", Storage="_Products", ThisKey="ID", OtherKey="CategoryID")]
-		public EntitySet<Product> Products
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Category_Watch", Storage="_Watches", ThisKey="ID", OtherKey="CategoryID")]
+		public EntitySet<Watch> Watches
 		{
 			get
 			{
-				return this._Products;
+				return this._Watches;
 			}
 			set
 			{
-				this._Products.Assign(value);
+				this._Watches.Assign(value);
 			}
 		}
 		
@@ -437,13 +422,13 @@ namespace CNTT_Watch
 			}
 		}
 		
-		private void attach_Products(Product entity)
+		private void attach_Watches(Watch entity)
 		{
 			this.SendPropertyChanging();
 			entity.Category = this;
 		}
 		
-		private void detach_Products(Product entity)
+		private void detach_Watches(Watch entity)
 		{
 			this.SendPropertyChanging();
 			entity.Category = null;
@@ -456,11 +441,11 @@ namespace CNTT_Watch
 		
 		private int _OrderID;
 		
-		private int _ProductID;
+		private int _WatchID;
 		
-		private double _Price;
+		private double _Gia;
 		
-		private int _Quantity;
+		private int _SoLuong;
 		
 		public OrderDetail()
 		{
@@ -482,50 +467,50 @@ namespace CNTT_Watch
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductID", DbType="Int NOT NULL")]
-		public int ProductID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WatchID", DbType="Int NOT NULL")]
+		public int WatchID
 		{
 			get
 			{
-				return this._ProductID;
+				return this._WatchID;
 			}
 			set
 			{
-				if ((this._ProductID != value))
+				if ((this._WatchID != value))
 				{
-					this._ProductID = value;
+					this._WatchID = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Float NOT NULL")]
-		public double Price
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gia", DbType="Float NOT NULL")]
+		public double Gia
 		{
 			get
 			{
-				return this._Price;
+				return this._Gia;
 			}
 			set
 			{
-				if ((this._Price != value))
+				if ((this._Gia != value))
 				{
-					this._Price = value;
+					this._Gia = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int NOT NULL")]
-		public int Quantity
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuong", DbType="Int NOT NULL")]
+		public int SoLuong
 		{
 			get
 			{
-				return this._Quantity;
+				return this._SoLuong;
 			}
 			set
 			{
-				if ((this._Quantity != value))
+				if ((this._SoLuong != value))
 				{
-					this._Quantity = value;
+					this._SoLuong = value;
 				}
 			}
 		}
@@ -539,15 +524,17 @@ namespace CNTT_Watch
 		
 		private int _ID;
 		
-		private System.DateTime _OrderDate;
+		private System.DateTime _NgayDatHang;
 		
-		private System.Nullable<System.DateTime> _ConfirmDate;
+		private System.Nullable<System.DateTime> _NgayXacNhan;
 		
-		private string _CustomerName;
+		private string _State;
 		
-		private string _PhoneNumber;
+		private string _TenKhachHang;
 		
-		private string _CusAddress;
+		private string _SDT;
+		
+		private string _DiaChi;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -555,16 +542,18 @@ namespace CNTT_Watch
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnOrderDateChanging(System.DateTime value);
-    partial void OnOrderDateChanged();
-    partial void OnConfirmDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnConfirmDateChanged();
-    partial void OnCustomerNameChanging(string value);
-    partial void OnCustomerNameChanged();
-    partial void OnPhoneNumberChanging(string value);
-    partial void OnPhoneNumberChanged();
-    partial void OnCusAddressChanging(string value);
-    partial void OnCusAddressChanged();
+    partial void OnNgayDatHangChanging(System.DateTime value);
+    partial void OnNgayDatHangChanged();
+    partial void OnNgayXacNhanChanging(System.Nullable<System.DateTime> value);
+    partial void OnNgayXacNhanChanged();
+    partial void OnStateChanging(string value);
+    partial void OnStateChanged();
+    partial void OnTenKhachHangChanging(string value);
+    partial void OnTenKhachHangChanged();
+    partial void OnSDTChanging(string value);
+    partial void OnSDTChanged();
+    partial void OnDiaChiChanging(string value);
+    partial void OnDiaChiChanged();
     #endregion
 		
 		public Order()
@@ -592,102 +581,122 @@ namespace CNTT_Watch
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrderDate", DbType="Date NOT NULL")]
-		public System.DateTime OrderDate
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayDatHang", DbType="Date NOT NULL")]
+		public System.DateTime NgayDatHang
 		{
 			get
 			{
-				return this._OrderDate;
+				return this._NgayDatHang;
 			}
 			set
 			{
-				if ((this._OrderDate != value))
+				if ((this._NgayDatHang != value))
 				{
-					this.OnOrderDateChanging(value);
+					this.OnNgayDatHangChanging(value);
 					this.SendPropertyChanging();
-					this._OrderDate = value;
-					this.SendPropertyChanged("OrderDate");
-					this.OnOrderDateChanged();
+					this._NgayDatHang = value;
+					this.SendPropertyChanged("NgayDatHang");
+					this.OnNgayDatHangChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConfirmDate", DbType="Date")]
-		public System.Nullable<System.DateTime> ConfirmDate
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayXacNhan", DbType="Date")]
+		public System.Nullable<System.DateTime> NgayXacNhan
 		{
 			get
 			{
-				return this._ConfirmDate;
+				return this._NgayXacNhan;
 			}
 			set
 			{
-				if ((this._ConfirmDate != value))
+				if ((this._NgayXacNhan != value))
 				{
-					this.OnConfirmDateChanging(value);
+					this.OnNgayXacNhanChanging(value);
 					this.SendPropertyChanging();
-					this._ConfirmDate = value;
-					this.SendPropertyChanged("ConfirmDate");
-					this.OnConfirmDateChanged();
+					this._NgayXacNhan = value;
+					this.SendPropertyChanged("NgayXacNhan");
+					this.OnNgayXacNhanChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string CustomerName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_State", DbType="NVarChar(1) NOT NULL", CanBeNull=false)]
+		public string State
 		{
 			get
 			{
-				return this._CustomerName;
+				return this._State;
 			}
 			set
 			{
-				if ((this._CustomerName != value))
+				if ((this._State != value))
 				{
-					this.OnCustomerNameChanging(value);
+					this.OnStateChanging(value);
 					this.SendPropertyChanging();
-					this._CustomerName = value;
-					this.SendPropertyChanged("CustomerName");
-					this.OnCustomerNameChanged();
+					this._State = value;
+					this.SendPropertyChanged("State");
+					this.OnStateChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string PhoneNumber
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenKhachHang", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string TenKhachHang
 		{
 			get
 			{
-				return this._PhoneNumber;
+				return this._TenKhachHang;
 			}
 			set
 			{
-				if ((this._PhoneNumber != value))
+				if ((this._TenKhachHang != value))
 				{
-					this.OnPhoneNumberChanging(value);
+					this.OnTenKhachHangChanging(value);
 					this.SendPropertyChanging();
-					this._PhoneNumber = value;
-					this.SendPropertyChanged("PhoneNumber");
-					this.OnPhoneNumberChanged();
+					this._TenKhachHang = value;
+					this.SendPropertyChanged("TenKhachHang");
+					this.OnTenKhachHangChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CusAddress", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string CusAddress
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SDT", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string SDT
 		{
 			get
 			{
-				return this._CusAddress;
+				return this._SDT;
 			}
 			set
 			{
-				if ((this._CusAddress != value))
+				if ((this._SDT != value))
 				{
-					this.OnCusAddressChanging(value);
+					this.OnSDTChanging(value);
 					this.SendPropertyChanging();
-					this._CusAddress = value;
-					this.SendPropertyChanged("CusAddress");
-					this.OnCusAddressChanged();
+					this._SDT = value;
+					this.SendPropertyChanged("SDT");
+					this.OnSDTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaChi", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string DiaChi
+		{
+			get
+			{
+				return this._DiaChi;
+			}
+			set
+			{
+				if ((this._DiaChi != value))
+				{
+					this.OnDiaChiChanging(value);
+					this.SendPropertyChanging();
+					this._DiaChi = value;
+					this.SendPropertyChanged("DiaChi");
+					this.OnDiaChiChanged();
 				}
 			}
 		}
@@ -713,8 +722,8 @@ namespace CNTT_Watch
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Product")]
-	public partial class Product : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Watch")]
+	public partial class Watch : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -723,41 +732,43 @@ namespace CNTT_Watch
 		
 		private string _Name;
 		
+		private string _GioiTinh;
+		
 		private int _CategoryID;
 		
-		private int _Quantity;
+		private int _SoLuong;
 		
-		private double _Price;
+		private double _Gia;
 		
-		private System.Nullable<int> _Discount;
+		private System.Nullable<int> _GiamGia;
 		
-		private string _Image;
+		private string _HinhAnh;
 		
-		private int _State;
+		private int _state;
 		
-		private string _Insurance;
+		private string _BaoHanh;
 		
-		private string _Model;
+		private string _KieuMay;
 		
-		private string _Sex;
+		private string _XuatXu;
 		
-		private string _Size;
+		private string _KichCo;
 		
-		private string _Thickness;
+		private string _DoDay;
 		
-		private string _Shellmaterial;
+		private string _ChatLieuVo;
 		
-		private string _Wirematerial;
+		private string _ChatLieuDay;
 		
-		private string _Glassmaterial;
+		private string _ChatLieuKinh;
 		
-		private string _Clockfunction;
+		private string _ChucNang;
 		
-		private string _Waterproof;
+		private string _ChongNuoc;
 		
-		private string _Describe;
+		private string _Mota;
 		
-		private string _Type;
+		private string _type;
 		
 		private EntityRef<Category> _Category;
 		
@@ -769,45 +780,47 @@ namespace CNTT_Watch
     partial void OnIDChanged();
     partial void OnNameChanging(string value);
     partial void OnNameChanged();
+    partial void OnGioiTinhChanging(string value);
+    partial void OnGioiTinhChanged();
     partial void OnCategoryIDChanging(int value);
     partial void OnCategoryIDChanged();
-    partial void OnQuantityChanging(int value);
-    partial void OnQuantityChanged();
-    partial void OnPriceChanging(double value);
-    partial void OnPriceChanged();
-    partial void OnDiscountChanging(System.Nullable<int> value);
-    partial void OnDiscountChanged();
-    partial void OnImageChanging(string value);
-    partial void OnImageChanged();
-    partial void OnStateChanging(int value);
-    partial void OnStateChanged();
-    partial void OnInsuranceChanging(string value);
-    partial void OnInsuranceChanged();
-    partial void OnModelChanging(string value);
-    partial void OnModelChanged();
-    partial void OnSexChanging(string value);
-    partial void OnSexChanged();
-    partial void OnSizeChanging(string value);
-    partial void OnSizeChanged();
-    partial void OnThicknessChanging(string value);
-    partial void OnThicknessChanged();
-    partial void OnShellmaterialChanging(string value);
-    partial void OnShellmaterialChanged();
-    partial void OnWirematerialChanging(string value);
-    partial void OnWirematerialChanged();
-    partial void OnGlassmaterialChanging(string value);
-    partial void OnGlassmaterialChanged();
-    partial void OnClockfunctionChanging(string value);
-    partial void OnClockfunctionChanged();
-    partial void OnWaterproofChanging(string value);
-    partial void OnWaterproofChanged();
-    partial void OnDescribeChanging(string value);
-    partial void OnDescribeChanged();
-    partial void OnTypeChanging(string value);
-    partial void OnTypeChanged();
+    partial void OnSoLuongChanging(int value);
+    partial void OnSoLuongChanged();
+    partial void OnGiaChanging(double value);
+    partial void OnGiaChanged();
+    partial void OnGiamGiaChanging(System.Nullable<int> value);
+    partial void OnGiamGiaChanged();
+    partial void OnHinhAnhChanging(string value);
+    partial void OnHinhAnhChanged();
+    partial void OnstateChanging(int value);
+    partial void OnstateChanged();
+    partial void OnBaoHanhChanging(string value);
+    partial void OnBaoHanhChanged();
+    partial void OnKieuMayChanging(string value);
+    partial void OnKieuMayChanged();
+    partial void OnXuatXuChanging(string value);
+    partial void OnXuatXuChanged();
+    partial void OnKichCoChanging(string value);
+    partial void OnKichCoChanged();
+    partial void OnDoDayChanging(string value);
+    partial void OnDoDayChanged();
+    partial void OnChatLieuVoChanging(string value);
+    partial void OnChatLieuVoChanged();
+    partial void OnChatLieuDayChanging(string value);
+    partial void OnChatLieuDayChanged();
+    partial void OnChatLieuKinhChanging(string value);
+    partial void OnChatLieuKinhChanged();
+    partial void OnChucNangChanging(string value);
+    partial void OnChucNangChanged();
+    partial void OnChongNuocChanging(string value);
+    partial void OnChongNuocChanged();
+    partial void OnMotaChanging(string value);
+    partial void OnMotaChanged();
+    partial void OntypeChanging(string value);
+    partial void OntypeChanged();
     #endregion
 		
-		public Product()
+		public Watch()
 		{
 			this._Category = default(EntityRef<Category>);
 			OnCreated();
@@ -833,7 +846,7 @@ namespace CNTT_Watch
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
 		public string Name
 		{
 			get
@@ -849,6 +862,26 @@ namespace CNTT_Watch
 					this._Name = value;
 					this.SendPropertyChanged("Name");
 					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GioiTinh", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string GioiTinh
+		{
+			get
+			{
+				return this._GioiTinh;
+			}
+			set
+			{
+				if ((this._GioiTinh != value))
+				{
+					this.OnGioiTinhChanging(value);
+					this.SendPropertyChanging();
+					this._GioiTinh = value;
+					this.SendPropertyChanged("GioiTinh");
+					this.OnGioiTinhChanged();
 				}
 			}
 		}
@@ -877,347 +910,347 @@ namespace CNTT_Watch
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int NOT NULL")]
-		public int Quantity
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuong", DbType="Int NOT NULL")]
+		public int SoLuong
 		{
 			get
 			{
-				return this._Quantity;
+				return this._SoLuong;
 			}
 			set
 			{
-				if ((this._Quantity != value))
+				if ((this._SoLuong != value))
 				{
-					this.OnQuantityChanging(value);
+					this.OnSoLuongChanging(value);
 					this.SendPropertyChanging();
-					this._Quantity = value;
-					this.SendPropertyChanged("Quantity");
-					this.OnQuantityChanged();
+					this._SoLuong = value;
+					this.SendPropertyChanged("SoLuong");
+					this.OnSoLuongChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Float NOT NULL")]
-		public double Price
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gia", DbType="Float NOT NULL")]
+		public double Gia
 		{
 			get
 			{
-				return this._Price;
+				return this._Gia;
 			}
 			set
 			{
-				if ((this._Price != value))
+				if ((this._Gia != value))
 				{
-					this.OnPriceChanging(value);
+					this.OnGiaChanging(value);
 					this.SendPropertyChanging();
-					this._Price = value;
-					this.SendPropertyChanged("Price");
-					this.OnPriceChanged();
+					this._Gia = value;
+					this.SendPropertyChanged("Gia");
+					this.OnGiaChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Discount", DbType="Int")]
-		public System.Nullable<int> Discount
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiamGia", DbType="Int")]
+		public System.Nullable<int> GiamGia
 		{
 			get
 			{
-				return this._Discount;
+				return this._GiamGia;
 			}
 			set
 			{
-				if ((this._Discount != value))
+				if ((this._GiamGia != value))
 				{
-					this.OnDiscountChanging(value);
+					this.OnGiamGiaChanging(value);
 					this.SendPropertyChanging();
-					this._Discount = value;
-					this.SendPropertyChanged("Discount");
-					this.OnDiscountChanged();
+					this._GiamGia = value;
+					this.SendPropertyChanged("GiamGia");
+					this.OnGiamGiaChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Image
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HinhAnh", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string HinhAnh
 		{
 			get
 			{
-				return this._Image;
+				return this._HinhAnh;
 			}
 			set
 			{
-				if ((this._Image != value))
+				if ((this._HinhAnh != value))
 				{
-					this.OnImageChanging(value);
+					this.OnHinhAnhChanging(value);
 					this.SendPropertyChanging();
-					this._Image = value;
-					this.SendPropertyChanged("Image");
-					this.OnImageChanged();
+					this._HinhAnh = value;
+					this.SendPropertyChanged("HinhAnh");
+					this.OnHinhAnhChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_State", DbType="Int NOT NULL")]
-		public int State
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_state", DbType="Int NOT NULL")]
+		public int state
 		{
 			get
 			{
-				return this._State;
+				return this._state;
 			}
 			set
 			{
-				if ((this._State != value))
+				if ((this._state != value))
 				{
-					this.OnStateChanging(value);
+					this.OnstateChanging(value);
 					this.SendPropertyChanging();
-					this._State = value;
-					this.SendPropertyChanged("State");
-					this.OnStateChanged();
+					this._state = value;
+					this.SendPropertyChanged("state");
+					this.OnstateChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Insurance", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Insurance
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BaoHanh", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string BaoHanh
 		{
 			get
 			{
-				return this._Insurance;
+				return this._BaoHanh;
 			}
 			set
 			{
-				if ((this._Insurance != value))
+				if ((this._BaoHanh != value))
 				{
-					this.OnInsuranceChanging(value);
+					this.OnBaoHanhChanging(value);
 					this.SendPropertyChanging();
-					this._Insurance = value;
-					this.SendPropertyChanged("Insurance");
-					this.OnInsuranceChanged();
+					this._BaoHanh = value;
+					this.SendPropertyChanged("BaoHanh");
+					this.OnBaoHanhChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Model", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Model
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KieuMay", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string KieuMay
 		{
 			get
 			{
-				return this._Model;
+				return this._KieuMay;
 			}
 			set
 			{
-				if ((this._Model != value))
+				if ((this._KieuMay != value))
 				{
-					this.OnModelChanging(value);
+					this.OnKieuMayChanging(value);
 					this.SendPropertyChanging();
-					this._Model = value;
-					this.SendPropertyChanged("Model");
-					this.OnModelChanged();
+					this._KieuMay = value;
+					this.SendPropertyChanged("KieuMay");
+					this.OnKieuMayChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sex", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string Sex
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_XuatXu", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string XuatXu
 		{
 			get
 			{
-				return this._Sex;
+				return this._XuatXu;
 			}
 			set
 			{
-				if ((this._Sex != value))
+				if ((this._XuatXu != value))
 				{
-					this.OnSexChanging(value);
+					this.OnXuatXuChanging(value);
 					this.SendPropertyChanging();
-					this._Sex = value;
-					this.SendPropertyChanged("Sex");
-					this.OnSexChanged();
+					this._XuatXu = value;
+					this.SendPropertyChanged("XuatXu");
+					this.OnXuatXuChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Size", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string Size
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KichCo", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string KichCo
 		{
 			get
 			{
-				return this._Size;
+				return this._KichCo;
 			}
 			set
 			{
-				if ((this._Size != value))
+				if ((this._KichCo != value))
 				{
-					this.OnSizeChanging(value);
+					this.OnKichCoChanging(value);
 					this.SendPropertyChanging();
-					this._Size = value;
-					this.SendPropertyChanged("Size");
-					this.OnSizeChanged();
+					this._KichCo = value;
+					this.SendPropertyChanged("KichCo");
+					this.OnKichCoChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Thickness", DbType="NVarChar(1) NOT NULL", CanBeNull=false)]
-		public string Thickness
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DoDay", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string DoDay
 		{
 			get
 			{
-				return this._Thickness;
+				return this._DoDay;
 			}
 			set
 			{
-				if ((this._Thickness != value))
+				if ((this._DoDay != value))
 				{
-					this.OnThicknessChanging(value);
+					this.OnDoDayChanging(value);
 					this.SendPropertyChanging();
-					this._Thickness = value;
-					this.SendPropertyChanged("Thickness");
-					this.OnThicknessChanged();
+					this._DoDay = value;
+					this.SendPropertyChanged("DoDay");
+					this.OnDoDayChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Shellmaterial", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Shellmaterial
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChatLieuVo", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string ChatLieuVo
 		{
 			get
 			{
-				return this._Shellmaterial;
+				return this._ChatLieuVo;
 			}
 			set
 			{
-				if ((this._Shellmaterial != value))
+				if ((this._ChatLieuVo != value))
 				{
-					this.OnShellmaterialChanging(value);
+					this.OnChatLieuVoChanging(value);
 					this.SendPropertyChanging();
-					this._Shellmaterial = value;
-					this.SendPropertyChanged("Shellmaterial");
-					this.OnShellmaterialChanged();
+					this._ChatLieuVo = value;
+					this.SendPropertyChanged("ChatLieuVo");
+					this.OnChatLieuVoChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Wirematerial", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Wirematerial
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChatLieuDay", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string ChatLieuDay
 		{
 			get
 			{
-				return this._Wirematerial;
+				return this._ChatLieuDay;
 			}
 			set
 			{
-				if ((this._Wirematerial != value))
+				if ((this._ChatLieuDay != value))
 				{
-					this.OnWirematerialChanging(value);
+					this.OnChatLieuDayChanging(value);
 					this.SendPropertyChanging();
-					this._Wirematerial = value;
-					this.SendPropertyChanged("Wirematerial");
-					this.OnWirematerialChanged();
+					this._ChatLieuDay = value;
+					this.SendPropertyChanged("ChatLieuDay");
+					this.OnChatLieuDayChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Glassmaterial", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Glassmaterial
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChatLieuKinh", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string ChatLieuKinh
 		{
 			get
 			{
-				return this._Glassmaterial;
+				return this._ChatLieuKinh;
 			}
 			set
 			{
-				if ((this._Glassmaterial != value))
+				if ((this._ChatLieuKinh != value))
 				{
-					this.OnGlassmaterialChanging(value);
+					this.OnChatLieuKinhChanging(value);
 					this.SendPropertyChanging();
-					this._Glassmaterial = value;
-					this.SendPropertyChanged("Glassmaterial");
-					this.OnGlassmaterialChanged();
+					this._ChatLieuKinh = value;
+					this.SendPropertyChanged("ChatLieuKinh");
+					this.OnChatLieuKinhChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Clockfunction", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Clockfunction
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChucNang", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string ChucNang
 		{
 			get
 			{
-				return this._Clockfunction;
+				return this._ChucNang;
 			}
 			set
 			{
-				if ((this._Clockfunction != value))
+				if ((this._ChucNang != value))
 				{
-					this.OnClockfunctionChanging(value);
+					this.OnChucNangChanging(value);
 					this.SendPropertyChanging();
-					this._Clockfunction = value;
-					this.SendPropertyChanged("Clockfunction");
-					this.OnClockfunctionChanged();
+					this._ChucNang = value;
+					this.SendPropertyChanged("ChucNang");
+					this.OnChucNangChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Waterproof", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Waterproof
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChongNuoc", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string ChongNuoc
 		{
 			get
 			{
-				return this._Waterproof;
+				return this._ChongNuoc;
 			}
 			set
 			{
-				if ((this._Waterproof != value))
+				if ((this._ChongNuoc != value))
 				{
-					this.OnWaterproofChanging(value);
+					this.OnChongNuocChanging(value);
 					this.SendPropertyChanging();
-					this._Waterproof = value;
-					this.SendPropertyChanged("Waterproof");
-					this.OnWaterproofChanged();
+					this._ChongNuoc = value;
+					this.SendPropertyChanged("ChongNuoc");
+					this.OnChongNuocChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Describe", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Describe
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mota", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Mota
 		{
 			get
 			{
-				return this._Describe;
+				return this._Mota;
 			}
 			set
 			{
-				if ((this._Describe != value))
+				if ((this._Mota != value))
 				{
-					this.OnDescribeChanging(value);
+					this.OnMotaChanging(value);
 					this.SendPropertyChanging();
-					this._Describe = value;
-					this.SendPropertyChanged("Describe");
-					this.OnDescribeChanged();
+					this._Mota = value;
+					this.SendPropertyChanged("Mota");
+					this.OnMotaChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Type
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_type", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string type
 		{
 			get
 			{
-				return this._Type;
+				return this._type;
 			}
 			set
 			{
-				if ((this._Type != value))
+				if ((this._type != value))
 				{
-					this.OnTypeChanging(value);
+					this.OntypeChanging(value);
 					this.SendPropertyChanging();
-					this._Type = value;
-					this.SendPropertyChanged("Type");
-					this.OnTypeChanged();
+					this._type = value;
+					this.SendPropertyChanged("type");
+					this.OntypeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Category_Product", Storage="_Category", ThisKey="CategoryID", OtherKey="ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Category_Watch", Storage="_Category", ThisKey="CategoryID", OtherKey="ID", IsForeignKey=true)]
 		public Category Category
 		{
 			get
@@ -1234,12 +1267,12 @@ namespace CNTT_Watch
 					if ((previousValue != null))
 					{
 						this._Category.Entity = null;
-						previousValue.Products.Remove(this);
+						previousValue.Watches.Remove(this);
 					}
 					this._Category.Entity = value;
 					if ((value != null))
 					{
-						value.Products.Add(this);
+						value.Watches.Add(this);
 						this._CategoryID = value.ID;
 					}
 					else
