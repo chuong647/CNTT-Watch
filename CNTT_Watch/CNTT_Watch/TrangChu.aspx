@@ -38,10 +38,10 @@
                     <asp:Label ID="Label10" Text='<%#"-"+Eval("giamgia")+"%"%>' ForeColor="White" Font-Size="15" runat="server">
                     </asp:Label>
                 </div>
-                <asp:HyperLink ID="HyperLink1" ImageUrl='<%#"~/Image/Watch/"+Eval("id")+Eval("anh")%>' NavigateUrl='<%#"~/DetailWatch.aspx?id="+Eval("id")%>' CssClass="img" ImageWidth="100%" ImageHeight="280px" runat="server"></asp:HyperLink>
-                <br /><div style="margin:0 30px;"><asp:HyperLink ID="HyperLink2" Text='<%#Eval("name")%>' NavigateUrl='<%#"~/DetailWatch.aspx?id="+Eval("id")%>' ForeColor="Red" Font-Underline="false" runat="server"></asp:HyperLink></div>
-                <span style="text-decoration:line-through;"><asp:Label ID="Label1" runat="server" Text='<%#Eval("gia","{0:0,0}")%>'></asp:Label>&nbsp;<span style="text-decoration:underline;">đ</span></span>&nbsp;
-                <span style="font-weight:bold;"><asp:Label ID="Label2" runat="server" Text='<%#Eval("gia2","{0:0,0}")%>'></asp:Label>&nbsp;<span style="text-decoration:underline;">đ</span></span>
+                <asp:HyperLink ID="HyperLink1" ImageUrl='<%#"~/Image/Watch/"+Eval("HinhAnh")%>' NavigateUrl='<%#"~/DetailWatch.aspx?id="+Eval("ID")%>' CssClass="img" ImageWidth="100%" ImageHeight="280px" runat="server"></asp:HyperLink>
+                <br /><div style="margin:0 30px;"><asp:HyperLink ID="HyperLink2" Text='<%#Eval("Name")%>' NavigateUrl='<%#"~/DetailWatch.aspx?id="+Eval("id")%>' ForeColor="Red" Font-Underline="false" runat="server"></asp:HyperLink></div>
+                <span style="text-decoration:line-through;"><asp:Label ID="Label1" runat="server" Text='<%#Eval("Gia","{0:0,0}")%>'></asp:Label>&nbsp;<span style="text-decoration:underline;">đ</span></span>&nbsp;
+                <span style="font-weight:bold;"><asp:Label ID="Label2" runat="server" Text='<%#Eval("Gia","{0:0,0}")%>'></asp:Label>&nbsp;<span style="text-decoration:underline;">đ</span></span>
             </div>
         </ItemTemplate>
     </asp:DataList>
@@ -51,10 +51,10 @@
             <div style="text-align:center;width:270px;height:350px;">
                 <div style="position:absolute;"><img src="/Image/sale.png" width="50" /></div>
                 <div style="position:absolute;height:50px;line-height:50px;">&nbsp<asp:Label ID="Label10" Text='<%#"-"+Eval("giamgia")+"%"%>' ForeColor="White" Font-Size="15" runat="server"></asp:Label></div>
-                <asp:HyperLink ID="HyperLink1" ImageUrl='<%#"~/Image/Watch/"+Eval("id")+Eval("anh")%>' NavigateUrl='<%#"~/DetailWatch.aspx?id="+Eval("id")%>' CssClass="img" ImageWidth="100%" ImageHeight="280px" runat="server"></asp:HyperLink>
-                <br /><div style="margin:0 30px;"><asp:HyperLink ID="HyperLink2" Text='<%#Eval("name")%>' NavigateUrl='<%#"~/DetailWatch.aspx?id="+Eval("id")%>' ForeColor="Red" Font-Underline="false" runat="server"></asp:HyperLink></div>
-                <span style="text-decoration:line-through;"><asp:Label ID="Label1" runat="server" Text='<%#Eval("gia","{0:0,0}")%>'></asp:Label>&nbsp;<span style="text-decoration:underline;">đ</span></span>&nbsp;
-                <span style="font-weight:bold;"><asp:Label ID="Label2" runat="server" Text='<%#Eval("gia2","{0:0,0}")%>'></asp:Label>&nbsp;<span style="text-decoration:underline;">đ</span></span>
+                <asp:HyperLink ID="HyperLink1" ImageUrl='<%#"~/Image/Watch/"+Eval("HinhAnh")%>' NavigateUrl='<%#"~/DetailWatch.aspx?id="+Eval("ID")%>' CssClass="img" ImageWidth="100%" ImageHeight="280px" runat="server"></asp:HyperLink>
+                <br /><div style="margin:0 30px;"><asp:HyperLink ID="HyperLink2" Text='<%#Eval("Name")%>' NavigateUrl='<%#"~/DetailWatch.aspx?id="+Eval("ID")%>' ForeColor="Red" Font-Underline="false" runat="server"></asp:HyperLink></div>
+                <span style="text-decoration:line-through;"><asp:Label ID="Label1" runat="server" Text='<%#Eval("Gia","{0:0,0}")%>'></asp:Label>&nbsp;<span style="text-decoration:underline;">đ</span></span>&nbsp;
+                <span style="font-weight:bold;"><asp:Label ID="Label2" runat="server" Text='<%#Eval("Gia","{0:0,0}")%>'></asp:Label>&nbsp;<span style="text-decoration:underline;">đ</span></span>
             </div>
         </ItemTemplate>
     </asp:DataList>
@@ -66,10 +66,10 @@
             <div style="text-align:center;width:270px;">
                 <div style="position:absolute;"><img src="/Image/sale.png" width="50" /></div>
                 <div style="position:absolute;height:50px;line-height:50px;">&nbsp<asp:Label ID="Label10" Text='<%#"-"+Eval("giamgia")+"%"%>' ForeColor="White" Font-Size="15" runat="server"></asp:Label></div>
-                <asp:HyperLink ID="HyperLink1" ImageUrl='<%#"~/Image/Watch/"+Eval("id")+Eval("anh")%>' NavigateUrl='<%#"~/DetailWatch.aspx?id="+Eval("id")%>' CssClass="img" ImageWidth="100%" ImageHeight="280px" runat="server"></asp:HyperLink>
-                <br /><div style="margin:0 30px;"><asp:HyperLink ID="HyperLink2" Text='<%#Eval("name")%>' NavigateUrl='<%#"~/DetailWatch.aspx?id="+Eval("id")%>' ForeColor="Red" Font-Underline="false" runat="server"></asp:HyperLink></div>
-                <span style="text-decoration:line-through;"><asp:Label ID="Label1" runat="server" Text='<%#Eval("gia","{0:0,0}")%>'></asp:Label>&nbsp;<span style="text-decoration:underline;">đ</span></span>&nbsp;
-                <span style="font-weight:bold;"><asp:Label ID="Label2" runat="server" Text='<%#Eval("gia2","{0:0,0}")%>'></asp:Label>&nbsp;<span style="text-decoration:underline;">đ</span></span>
+                <asp:HyperLink ID="HyperLink1" ImageUrl='<%#"~/Image/Watch/"+Eval("HinhAnh")%>' NavigateUrl='<%#"~/DetailWatch.aspx?id="+Eval("ID")%>' CssClass="img" ImageWidth="100%" ImageHeight="280px" runat="server"></asp:HyperLink>
+                <br /><div style="margin:0 30px;"><asp:HyperLink ID="HyperLink2" Text='<%#Eval("Name")%>' NavigateUrl='<%#"~/DetailWatch.aspx?id="+Eval("ID")%>' ForeColor="Red" Font-Underline="false" runat="server"></asp:HyperLink></div>
+                <span style="text-decoration:line-through;"><asp:Label ID="Label1" runat="server" Text='<%#Eval("Gia","{0:0,0}")%>'></asp:Label>&nbsp;<span style="text-decoration:underline;">đ</span></span>&nbsp;
+                <span style="font-weight:bold;"><asp:Label ID="Label2" runat="server" Text='<%#Eval("Gia","{0:0,0}")%>'></asp:Label>&nbsp;<span style="text-decoration:underline;">đ</span></span>
             </div>
         </ItemTemplate>
     </asp:DataList>
@@ -81,10 +81,10 @@
             <div style="text-align:center;width:270px;">
                 <div style="position:absolute;"><img src="/Image/sale.png" width="50" /></div>
                 <div style="position:absolute;height:50px;line-height:50px;">&nbsp<asp:Label ID="Label10" Text='<%#"-"+Eval("giamgia")+"%"%>' ForeColor="White" Font-Size="15" runat="server"></asp:Label></div>
-                <asp:HyperLink ID="HyperLink1" ImageUrl='<%#"~/Image/Watch/"+Eval("id")+Eval("anh")%>' NavigateUrl='<%#"~/DetailWatch.aspx?id="+Eval("id")%>' CssClass="img" ImageWidth="100%" ImageHeight="280px" runat="server"></asp:HyperLink>
-                <br /><div style="margin:0 30px;"><asp:HyperLink ID="HyperLink2" Text='<%#Eval("name")%>' NavigateUrl='<%#"~/DetailWatch.aspx?id="+Eval("id")%>' ForeColor="Red" Font-Underline="false" runat="server"></asp:HyperLink></div>
-                <span style="text-decoration:line-through;"><asp:Label ID="Label1" runat="server" Text='<%#Eval("gia","{0:0,0}")%>'></asp:Label>&nbsp;<span style="text-decoration:underline;">đ</span></span>&nbsp;
-                <span style="font-weight:bold;"><asp:Label ID="Label2" runat="server" Text='<%#Eval("gia2","{0:0,0}")%>'></asp:Label>&nbsp;<span style="text-decoration:underline;">đ</span></span>
+                <asp:HyperLink ID="HyperLink1" ImageUrl='<%#"~/Image/Watch/"+Eval("HinhAnh")%>' NavigateUrl='<%#"~/DetailWatch.aspx?id="+Eval("ID")%>' CssClass="img" ImageWidth="100%" ImageHeight="280px" runat="server"></asp:HyperLink>
+                <br /><div style="margin:0 30px;"><asp:HyperLink ID="HyperLink2" Text='<%#Eval("Name")%>' NavigateUrl='<%#"~/DetailWatch.aspx?id="+Eval("ID")%>' ForeColor="Red" Font-Underline="false" runat="server"></asp:HyperLink></div>
+                <span style="text-decoration:line-through;"><asp:Label ID="Label1" runat="server" Text='<%#Eval("Gia","{0:0,0}")%>'></asp:Label>&nbsp;<span style="text-decoration:underline;">đ</span></span>&nbsp;
+                <span style="font-weight:bold;"><asp:Label ID="Label2" runat="server" Text='<%#Eval("Gia","{0:0,0}")%>'></asp:Label>&nbsp;<span style="text-decoration:underline;">đ</span></span>
             </div>
         </ItemTemplate>
     </asp:DataList>
@@ -94,7 +94,7 @@
             <div style="text-align:center;width:270px;height:350px;">
                 <div style="position:absolute;"><img src="/Image/sale.png" width="50" /></div>
                 <div style="position:absolute;height:50px;line-height:50px;">&nbsp<asp:Label ID="Label10" Text='<%#"-"+Eval("giamgia")+"%"%>' ForeColor="White" Font-Size="15" runat="server"></asp:Label></div>
-                <asp:HyperLink ID="HyperLink1" ImageUrl='<%#"~/Image/Watch/"+Eval("id")+Eval("anh")%>' NavigateUrl='<%#"~/DetailWatch.aspx?id="+Eval("id")%>' CssClass="img" ImageWidth="100%" ImageHeight="280px" runat="server"></asp:HyperLink>
+                <asp:HyperLink ID="HyperLink1" ImageUrl='<%#"~/Image/Watch/"+Eval("HinhAnh")%>' NavigateUrl='<%#"~/DetailWatch.aspx?id="+Eval("id")%>' CssClass="img" ImageWidth="100%" ImageHeight="280px" runat="server"></asp:HyperLink>
                 <br /><div style="margin:0 30px;"><asp:HyperLink ID="HyperLink2" Text='<%#Eval("name")%>' NavigateUrl='<%#"~/DetailWatch.aspx?id="+Eval("id")%>' ForeColor="Red" Font-Underline="false" runat="server"></asp:HyperLink></div>
                 <span style="text-decoration:line-through;"><asp:Label ID="Label1" runat="server" Text='<%#Eval("gia","{0:0,0}")%>'></asp:Label>&nbsp;<span style="text-decoration:underline;">đ</span></span>&nbsp;
                 <span style="font-weight:bold;"><asp:Label ID="Label2" runat="server" Text='<%#Eval("gia2","{0:0,0}")%>'></asp:Label>&nbsp;<span style="text-decoration:underline;">đ</span></span>

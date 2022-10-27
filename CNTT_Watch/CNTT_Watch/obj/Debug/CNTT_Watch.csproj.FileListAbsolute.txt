@@ -292,3 +292,4 @@ D:\IT\HK1_N4\Projects\CNTT-Watch\CNTT_Watch\CNTT_Watch\bin\roslyn\VBCSCompiler.e
 D:\IT\HK1_N4\Projects\CNTT-Watch\CNTT_Watch\CNTT_Watch\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\IT\HK1_N4\Projects\CNTT-Watch\CNTT_Watch\CNTT_Watch\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\IT\HK1_N4\Projects\CNTT-Watch\CNTT_Watch\CNTT_Watch\obj\Debug\CNTT_Watch.csproj.CopyComplete
+D:\IT\HK1_N4\Projects\CNTT-Watch\CNTT_Watch\CNTT_Watch\obj\Debug\CNTT_Watch.csproj.AssemblyReference.cache
