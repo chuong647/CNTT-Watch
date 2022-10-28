@@ -17,6 +17,7 @@ namespace CNTT_Watch
             ShowSEIKO();
             ShowCASIO();
             ShowORIENT();
+            ShowCITIZENT();
             
         }
         public void ShowHotSale()
@@ -29,7 +30,7 @@ namespace CNTT_Watch
         public void ShowSEIKO()
         {
             var q = (from w in kn.Watches
-                     where w.CategoryID == 1
+                     where w.CategoryID == 2
                      select w).Take(4);
             dlSEIKO.DataSource = q;
             dlSEIKO.DataBind();
@@ -37,7 +38,7 @@ namespace CNTT_Watch
         public void ShowCASIO()
         {
             var q = (from w in kn.Watches
-                     where w.CategoryID == 2
+                     where w.CategoryID == 1
                      select w).Take(4);
             dlCASIO.DataSource = q;
             dlCASIO.DataBind();
@@ -45,10 +46,18 @@ namespace CNTT_Watch
         public void ShowORIENT()
         {
             var q = (from w in kn.Watches
-                     where w.CategoryID == 3
+                     where w.CategoryID == 4
                      select w).Take(4);
             dlORIENT.DataSource = q;
             dlORIENT.DataBind();
+        }
+        public void ShowCITIZENT()
+        {
+            var q = (from w in kn.Watches
+                     where w.CategoryID == 6
+                     select w).Take(4);
+            dlCITIZENT.DataSource = q;
+            dlCITIZENT.DataBind();
         }
     }
 }

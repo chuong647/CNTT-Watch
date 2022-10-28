@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\CNTT_Watch",
+    "\\CNTT_Watch\\CNTT_Watch",
+    "\\CNTT_Watch\\CNTT_Watch\\Admin"
   ],
-  "SelectedNode": "\\CNTT_Watch.sln",
+  "SelectedNode": "\\CNTT_Watch\\CNTT_Watch\\Admin\\ThemSanPham.aspx.cs",
   "PreviewInSolutionExplorer": false
 }
