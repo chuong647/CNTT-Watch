@@ -71,8 +71,10 @@
     <Content Include="Admin\DuyetDon.aspx" />
     <Content Include="Admin\QuanLySanPham.aspx" />
     <Content Include="Admin\QuanLyTaiKhoan.aspx" />
+    <Content Include="Admin\SuaSanPham.aspx" />
     <Content Include="Admin\ThemSanPham.aspx" />
     <Content Include="Admin\TrangChu.aspx" />
+    <Content Include="Cart.aspx" />
     <Content Include="Image\sale.png" />
     <Content Include="TrangChu.aspx" />
     <Content Include="DoiMatKhau.aspx" />
@@ -126,6 +128,13 @@
     <Compile Include="Admin\QuanLyTaiKhoan.aspx.designer.cs">
       <DependentUpon>QuanLyTaiKhoan.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\SuaSanPham.aspx.cs">
+      <DependentUpon>SuaSanPham.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SuaSanPham.aspx.designer.cs">
+      <DependentUpon>SuaSanPham.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\ThemSanPham.aspx.cs">
       <DependentUpon>ThemSanPham.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -139,6 +148,13 @@
     </Compile>
     <Compile Include="Admin\TrangChu.aspx.designer.cs">
       <DependentUpon>TrangChu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="CNTTWATCH.designer.cs">
       <AutoGen>True</AutoGen>
